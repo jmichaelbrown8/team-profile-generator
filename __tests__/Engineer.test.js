@@ -1,14 +1,28 @@
 const Engineer = require('../lib/Engineer');
-throw new Error('Unimplimented');
+
 describe('Engineer', () => {
     describe('constructor', () => {
-        it('should work with expected input', () => {
-            
+        it('should work when passing in the required fields', () => {
+            const myEmployee = new Engineer(20, 'John Doe', 'johndoe@generic.com', 'johndoe123');
+
+            // it should still work with the super class
+            expect(myEmployee.id).toEqual(20);
+            expect(myEmployee.name).toEqual('John Doe');
+            expect(myEmployee.email).toEqual('johndoe@generic.com');
+
+            // and collect the github property
+            expect(myEmployee.github).toEqual('johndoe123');
+
         })
 
-        it('should throw an error with unexpected input', () => {})
+        it('should throw an error when no values are passed', () => {
+            
+            const cb = () => {
+                const myEmployee = new Employee();
+            }
 
-        it('should have the properties of the Employee class', () => {})
+            expect(cb).toThrow();
+        })
     
     })
 
