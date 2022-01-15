@@ -1,5 +1,5 @@
 const Intern = require('../lib/Manager');
-
+throw new Error('Unimplimented');
 describe('Manager', () => {
     describe('constructor', () => {
         it('should work with expected input', () => {})

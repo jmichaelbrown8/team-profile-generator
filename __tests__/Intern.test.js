@@ -1,5 +1,5 @@
 const Intern = require('../lib/Intern');
-
+throw new Error('Unimplimented');
 describe('Intern', () => {
     describe('constructor', () => {
         it('should work with expected input', () => {})

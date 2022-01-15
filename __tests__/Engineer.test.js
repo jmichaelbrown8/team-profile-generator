@@ -1,8 +1,10 @@
 const Engineer = require('../lib/Engineer');
-
+throw new Error('Unimplimented');
 describe('Engineer', () => {
     describe('constructor', () => {
-        it('should work with expected input', () => {})
+        it('should work with expected input', () => {
+            
+        })
 
         it('should throw an error with unexpected input', () => {})
 
@@ -12,7 +14,7 @@ describe('Engineer', () => {
 
     describe('getGithub', () => {
         it('should return the correct github username', () => {
-            
+
         })
     })
 
