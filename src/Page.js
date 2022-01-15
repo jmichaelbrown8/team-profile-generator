@@ -1,0 +1,1 @@
+// This will house the base index.html template code with a title and a space for all the employee cards
