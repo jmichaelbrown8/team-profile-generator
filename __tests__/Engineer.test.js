@@ -15,13 +15,13 @@ describe('Engineer', () => {
 
         })
 
-        it('should throw an error when no values are passed', () => {
+        it('should throw an error when no github value is passed', () => {
             
             const cb = () => {
-                const myEmployee = new Employee();
+                const myEmployee = new Engineer(20, 'John Doe', 'johndoe@generic.com');
             }
 
-            expect(cb).toThrow();
+            expect(cb).toThrow(new Error("You must include github profile for an Engineer class"));
         })
     
     })
