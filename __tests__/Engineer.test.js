@@ -28,13 +28,17 @@ describe('Engineer', () => {
 
     describe('getGithub', () => {
         it('should return the correct github username', () => {
+            const myEmployee = new Engineer(20, 'John Doe', 'johndoe@generic.com', 'johndoe123');
 
+            expect(myEmployee.getGithub()).toEqual('johndoe123');
         })
     })
 
     describe('getRole', () => {
         it('should return overwrite the base Employee class and return "Engineer"', () => {
+            const myEmployee = new Engineer(20, 'John Doe', 'johndoe@generic.com', 'johndoe123');
 
+            expect(myEmployee.getRole()).toEqual('Engineer');
         })
     })
 
