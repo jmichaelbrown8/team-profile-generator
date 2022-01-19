@@ -20,7 +20,7 @@ module.exports = {
             <header class="bg-danger text-light d-flex flex-wrap justify-content-center py-4 mb-4">
                 <h1>${teamName}</h1>
             </header>
-            <main class="d-flex justify-content-center p-4">
+            <main class="d-flex flex-wrap justify-content-center p-4">
                 ${employeeHTML}
             </main>
         </body>

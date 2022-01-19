@@ -28,7 +28,7 @@ function getDetail( employee ) {
 
 module.exports = {
     renderCard: ( employee => `
-        <div class="card m-2" style="width: 20rem;">
+        <div class="card m-2 bg-light" style="width:20rem;">
             <div class="card-title bg-primary text-light p-2">
                 <h2>${employee.getName()}</h2>
                 <h3>

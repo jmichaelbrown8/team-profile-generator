@@ -21,8 +21,8 @@ fs.writeFile('./dist/index.html',
         teamName: 'The J', 
         employees: [
             new Engineer(1, 'J. Michael Brown', 'jmichaelbrown8@Gmail.com', 'jmichaelbrown8'),
-            new Intern(2, 'Jen Brown', 'jmichaelbrown8@Gmail.com', 'UCSD'),
-            new Manager(3, 'Jesy Brown', 'jmichaelbrown8@Gmail.com', 8),
+            new Intern(2, 'Jen Brown', 'jbro1@Gmail.com', 'UCSD'),
+            new Manager(3, 'Jesy Brown', 'jbro2@Gmail.com', 8),
         ]
     }), 
     () => {}
