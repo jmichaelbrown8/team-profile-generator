@@ -16,7 +16,7 @@ function getIcon( role ) {
 function getDetail( employee ) {
     switch ( employee.getRole() ) {
         case 'Engineer':
-            return `<li class="list-group-item">Github: <a href="https://github.com/${employee.getGithub()}">${employee.getGithub()}</a></li>`;
+            return `<li class="list-group-item">Github: <a href="https://github.com/${employee.getGithub()}" target="_blank">${employee.getGithub()}</a></li>`;
         case 'Intern':
             return `<li class="list-group-item">School: ${employee.getSchool()}</li>`;
         case 'Manager':
