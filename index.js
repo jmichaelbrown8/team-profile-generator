@@ -32,19 +32,19 @@ async function recursiveAskAboutEmployee( employeeArray ) {
         }
     }
     
-    let { id } = await inquirer.prompt(
-        {
-            type: 'number',
-            message: `What is the ${role}'s employee ID?`,
-            name: 'id'
-        }
-    );
-
     let { name } = await inquirer.prompt(
         {
             type: 'input',
             message: `What is the ${role}'s Name?`,
             name: 'name'
+        }
+    );
+
+    let { id } = await inquirer.prompt(
+        {
+            type: 'number',
+            message: `What is ${name}'s employee ID?`,
+            name: 'id'
         }
     );
 
@@ -93,19 +93,14 @@ async function recursiveAskAboutEmployee( employeeArray ) {
 
 }
 
-function writeIndexHTML( pageHTML ) {
+async function writeIndexHTML( pageHTML ) {
 
     // Write out the template code to the ./dist/index.html file
-    fs.mkdir('dist', 
-        { recursive: true }, 
-        err => err ? console.error(err) : console.log('Made ./dist folder')
+    await fs.promises.mkdir( 'dist', { recursive: true } );
+
+    let writeFileErr = await fs.promises.writeFile( './dist/index.html', pageHTML );
     
-    );
-    
-    fs.writeFile('./dist/index.html', 
-        pageHTML, 
-        err => err ? console.error(err) : console.log('Wrote ./dist/index.html')
-    );
+    writeFileErr ? console.error(writeFileErr) : console.log( 'Wrote ./dist/index.html' )
 }
 
 recursiveAskAboutEmployee()
