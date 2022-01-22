@@ -22,12 +22,14 @@ async function recursiveAskAboutEmployee( employeeArray ) {
         ({ role } = await inquirer.prompt(
             {
                 type: 'list',
-                message: 'What role does the employee have?',
-                choices: ['Manager', 'Engineer', 'Intern'],
+                message: 'Which role should we add next?',
+                choices: ["I'm done", 'Engineer', 'Intern'],
                 name: 'role'
             }
         ));
-
+        if (role === "I'm done") {
+            return employeeArray;
+        }
     }
     
     let { id } = await inquirer.prompt(
@@ -86,19 +88,9 @@ async function recursiveAskAboutEmployee( employeeArray ) {
         default:
             return employeeArray.push( new Employee(id, name, email) );
     }
-    
-    let { moreEmployees } = await inquirer.prompt({
-        type: "confirm",
-        message: "Add another employee?",
-        name: "moreEmployees"
-    });
+        
+    return recursiveAskAboutEmployee( employeeArray );
 
-    if ( moreEmployees ) {
-        return recursiveAskAboutEmployee( employeeArray );
-    }
-
-    return employeeArray;
-    
 }
 
 function writeIndexHTML( pageHTML ) {
@@ -116,15 +108,7 @@ function writeIndexHTML( pageHTML ) {
     );
 }
 
-inquirer.prompt({
-        type: 'input',
-        message: "What is the team's name?",
-        name: 'teamName'
-    })    
-    .then( async ({ teamName }) => {
-        const employees = await recursiveAskAboutEmployee();
-        return { teamName, employees };
-    })
-    .then( pageObj => renderPage(pageObj))    
-    .then( pageHTML => writeIndexHTML(pageHTML));
+recursiveAskAboutEmployee()
+    .then( employees => renderPage( employees ) )
+    .then( pageHTML => writeIndexHTML( pageHTML ) );
     
