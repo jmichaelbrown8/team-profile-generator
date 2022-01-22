@@ -1,6 +1,10 @@
 # 🛗 team-profile-generator
 A node.js script to ask about members of a team that generates a profile website.
 
+View a video of how to run the application [here](https://drive.google.com/file/d/1ollVVUod9U-qHPQVI7AvsfyzGeoMcito/view?usp=sharing)
+
+![Screenshot](./screenshot.png)
+
 ## NPM Scripts
 The application has these npm commands available
 ### `npm install`
@@ -15,7 +19,3 @@ To start the jest tests.
 * inquirer
 * node.js
 * Bootstrap
-* jQuery
-
-
-
