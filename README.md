@@ -1,5 +1,5 @@
 # 🛗 team-profile-generator
-A node.js script to ask about members of a team that generates a profile website.
+A node.js script to ask about members of a team that generates a profile website. This script assumes that there is one manager and any number of engineers or interns.
 
 View a video of how to run the application [here](https://drive.google.com/file/d/1ollVVUod9U-qHPQVI7AvsfyzGeoMcito/view?usp=sharing)
 
